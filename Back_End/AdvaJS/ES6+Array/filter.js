@@ -1,3 +1,5 @@
+//Using the filtre only
+
 const laps = [1.42, 1.38, 1.51, 1.35, 1.47];
 
 const fastestLap = laps.filter((times) => {
@@ -5,6 +7,9 @@ const fastestLap = laps.filter((times) => {
 })
 
 console.log(fastestLap);
+
+
+// Using the filter with the map()
 
 const WDC = [
     { name: "Max", points: 314 },

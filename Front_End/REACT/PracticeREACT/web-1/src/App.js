@@ -11,8 +11,8 @@ import max from './assets/max.jpeg';
 function App() {
   return (
     <div className="App">
-      <Home img={charles} name="Charles Leclerc"></Home>
-      <Home img={lewis} name="Lewis Hamilton"></Home>
+      <Home img={charles} name="Charles Leclerc" number={16}></Home>
+      <Home img={lewis} name="Lewis Hamilton" number={44}></Home>
       <Home img={max} name="Max Verstappen"></Home>
     </div>
   );

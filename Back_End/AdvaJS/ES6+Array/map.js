@@ -1,3 +1,5 @@
+//Example One
+
 const numbers = [10, 20, 30, 40];
 
 const results = numbers.map((numbers) => {
@@ -6,6 +8,8 @@ const results = numbers.map((numbers) => {
 
 console.log(results);
 
+//Example Two
+
 const Oprices = [100, 200, 300, 400];
 
 const newPrices = Oprices.map((price) => {
@@ -13,6 +17,8 @@ const newPrices = Oprices.map((price) => {
 });
 
 console.log(newPrices);
+
+//Example Three
 
 const prices = [100, 250, 500, 1000];
 
