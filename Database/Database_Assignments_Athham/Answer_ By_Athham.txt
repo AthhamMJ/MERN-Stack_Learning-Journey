@@ -1,0 +1,291 @@
+1. db.employees.insertOne({
+    "_id": "1",
+    "Name": "Arun Kumar",
+    "Department": "IT",
+    "Designation": "Software Engineer",
+    "Salary": 55000,
+    "Age": 28,
+    "Gender": "Male",
+    "City": "Colombo",
+    "Joining_date": 2019-03-15,
+    "Experience_years": 5,
+    "is_active": true,
+    "skills": ["JavaScript", "Node.js"]
+})
+
+2. db.employees.insertMany([
+    {
+    "_id": "2",
+    "Name": "Nisha Perera",
+    "Department": "HR",
+    "Designation": "HR Manager",
+    "Salary": 642000,
+    "Age": 34,
+    "Gender": "Female",
+    "City": "Kandy",
+    "Joining_date": 2016-07-01,
+    "Experience_years": 8,
+    "is_active": true,
+    "skills": ["Recruitment", "Payroll"]
+}
+{
+    "_id": "3",
+    "Name": "Kavindu Silva",
+    "Department": "IT",
+    "Designation": "Backend Developer",
+    "Salary": 58000,
+    "Age": 26,
+    "Gender": "Male",
+    "City": "Colombo",
+    "Joining_date": 2020-01-20,
+    "Experience_years": 4,
+    "is_active": true,
+    "skills": ["Java", "Spring"]
+}
+{
+    "_id": "4",
+    "Name": "Priya Raj",
+    "Department": "Finance",
+    "Designation": "Accountant",
+    "Salary": 48000,
+    "Age": 31,
+    "Gender": "Female",
+    "City": "Jaffna",
+    "Joining_date": 2017-05-10,
+    "Experience_years": 7,
+    "is_active": true,
+    "skills": ["Excel", "Tally"]
+}
+])
+
+3.   acknowledged: true,
+  insertedIds: {
+    '0': '6',
+    '1': '7',
+    '2': '8',
+    '3': '9',
+    '4': '10',
+    '5': '11',
+    '6': '12',
+    '7': '13',
+    '8': '14',
+    '9': '15',
+    '10': '16',
+    '11': '17',
+    '12': '18',
+    '13': '19',
+    '14': '20'
+  }
+{Proof}
+
+db.employees.find()
+
+
+4.  db.employees.find(
+  {},
+  {
+    _id: 0,
+    Name: 1,
+    Department: 1,
+    Salary: 1
+  }
+)
+
+output:- 
+{
+  Name: 'Arun Kumar',
+  Department: 'IT',
+  Salary: 55000
+}
+{
+  Name: 'Nisha Perera',
+  Department: 'HR',
+  Salary: 642000
+}
+{
+  Name: 'Kavindu Silva',
+  Department: 'IT',
+  Salary: 58000
+}
+
+
+5.  db.employees.find(
+  {
+   Department: "IT"
+  }
+)
+
+output sent me the entire datas of 8 employees
+
+6. db.employees.find(
+  {
+   Salary: {$gt: 55000}
+  }
+)
+
+output sent me the entire datas of 11 employees
+
+7.  db.employees.find(
+  {
+    Age: {$gte: 25},
+  	Age: {$lte: 35}
+  }
+)
+
+Glad to get the output with no single mistake
+
+8.  db.employees.find(
+  {
+    is_active: true
+  }
+)
+
+9.  db.employees.find({
+    $and :[
+      {Gender: "Female"}, 
+      {Department: "Finance"}
+    ]
+})
+
+
+10. db.employees.find({
+    $or :[
+      {City: "Kandy"}, 
+      {City: "Colombo"}
+    ]
+}) 
+
+
+11.  db.employees.aggregate([
+  {
+    $sort: {Salary: -1}
+  }
+])
+
+
+12.  db.employees.aggregate([
+{ 
+  $sort:{Salary :-1},
+},
+{
+  $limit: 5
+}
+])
+
+
+13.  db.employees.aggregate([
+{ 
+  $sort:{Joining_date : -1},
+},
+{
+  $limit: 3
+}
+])
+
+
+14.  db.employees.aggregate([
+  {
+    $group:{
+      _id: "$Department",
+      TotalMembers: {$sum: 1}
+    }
+  }
+])
+
+
+15.   db.employees.aggregate([
+  {
+    $match:{
+    	is_active: false
+    }
+  }
+])
+
+
+16.  db.employees.updateOne(
+  {Name: "Vikram Singh"},
+  {$set: {Designation: "Senior Software Engineer"}}
+)
+
+
+17.  db.employees.updateOne(
+    { Name: "Vikram Singh" },
+    { $unset: { skills: "" } }
+)
+
+
+18.  db.employees.deleteOne(
+  {Name: Kamala Devi}
+)
+
+
+19.  db.employees.deleteMany(
+  {is_active: false}
+)
+
+
+20.  db.employees.aggregate([
+  {
+    $project: {
+      _id: 0,
+      Name: 1,
+      Experience_years: 1
+    }
+  }
+])
+
+
+21.  db.employees.aggregate([
+  {
+    $match: {
+      skills: "Java"
+    }
+  }
+])
+
+22.  db.employees.aggregate([
+  {
+    $match: {
+      is_active: true
+    }
+  },
+  {
+    $group: {
+      _id: "$Department",
+      TotalMembers: { $sum: 1 }
+    }
+  }
+])
+
+
+23.  db.employees.aggregate([
+  {
+    $group: {
+      _id: "$Department",
+      AverageSalary: {$avg: "$Salary"}
+    }
+  }
+])
+
+
+24.  db.employees.aggregate([
+  {
+    $group: {
+      _id: "$Department",
+      MaximumSalary: {$max: "$Salary"},
+      MinimumSalary: {$min: "$Salary"}
+    }
+  }
+])
+
+
+25. db.employees.aggregate([
+  {
+    $lookup: {
+      from: "employees",     
+      localField: "departments",
+      foreignField: "_id",
+      as: "Name, HOD, Location"
+    }
+  }
+]);
