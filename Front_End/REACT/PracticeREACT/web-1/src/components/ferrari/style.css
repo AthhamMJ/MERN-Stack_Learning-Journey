@@ -26,14 +26,14 @@ a{
     display: flex;
 }
 .leclerc{
-    background-image: url(Chalex.jpeg);
+    background-image: url(../../assets/Chalex.jpeg);
     height: 500px;
     width: 500px;
     background-size: cover;
 }
 .content{
     flex: 1;
-    background-image: url(Ferrari\ Formula\ one.webp);
+    background-image: url(../../assets/ferrari.webp);
     background-size: cover;
 }
 

@@ -294,6 +294,8 @@ db.<collectionName>.findOne({
 
 ### Example
 
+
+
 ```javascript
 db.studentDetails.findOne({
     studentID: "S003"

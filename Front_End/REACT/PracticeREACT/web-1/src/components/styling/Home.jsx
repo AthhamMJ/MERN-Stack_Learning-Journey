@@ -2,9 +2,7 @@ export default function Home({img="Image Unavailable", name=3, number="No Number
     return(
         <>
             <div style={style.box}>
-                <div><img src={img} style={{ width: '100%', height: 'auto', borderRadius: '28px'}}/></div>
-                <p style={style.react}>{name}</p>
-                <p style={style.react}>{number}</p>
+                <div><img src={img} style={{ width: '100%', height: 'auto', borderRadius: '28px'}}/></div>  
             </div>
         </>
     )
