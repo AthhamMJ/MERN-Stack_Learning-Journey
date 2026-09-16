@@ -25,4 +25,4 @@ const style = {
         width: "250px",
         padding: "50px"
     },
-} 
+}

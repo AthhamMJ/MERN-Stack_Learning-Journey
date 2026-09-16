@@ -15,19 +15,19 @@ const students = ([
       age: 20
     },
     {
-      name: "Nurath",
-      age: 19
+      name: "Max",
+      age: 28
     },
     {
-      name: "Abityuth",
-      age: 22
+      name: "Chalres",
+      age: 28
     },
     {
-      name: "Mathushikka",
-      age: 20
+      name: "Lewis",
+      age: 41
     },
     {
-      name: "Ashthaaf",
+      name: "Kimi",
       age: 20
     }
   ])
@@ -40,7 +40,7 @@ function App() {
     //   <Home img={max} name="Max Verstappen"></Home>
     // </div>
     <div>
-      <Learn students ={students} />
+      <Learn students ={students}></Learn>
     </div>
   );
 }
