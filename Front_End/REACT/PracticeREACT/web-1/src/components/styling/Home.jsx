@@ -2,7 +2,9 @@ export default function Home({img="Image Unavailable", name=3, number="No Number
     return(
         <>
             <div style={style.box}>
-                <div><img src={img} style={{ width: '100%', height: 'auto', borderRadius: '28px'}}/></div>  
+                <div>
+                    <img src={img} style={{ width: '100%', height: 'auto', borderRadius: '28px'}}/>
+                </div>
             </div>
         </>
     )
@@ -23,5 +25,4 @@ const style = {
     subBody1:{
         margin: "100px"
     }
-
 }

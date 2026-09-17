@@ -8,6 +8,7 @@ import Learn from './components/props/Learn';
 // import charles from './assets/charles.png';
 // import lewis from './assets/lewis.png';
 // import max from './assets/max.jpeg';
+import Hooks from './components/Input/Hooks'
 
 const students = ([
     {
@@ -41,6 +42,7 @@ function App() {
     // </div>
     <div>
       <Learn students ={students}></Learn>
+      <Hooks></Hooks>
     </div>
   );
 }

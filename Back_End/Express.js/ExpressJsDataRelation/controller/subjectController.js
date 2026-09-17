@@ -1,21 +1,24 @@
-import { json } from "body-parser";
-import student from "../model/subjectModel"
+import subject from "../model/subjectModel.js"
 
-export const createSubject = async(res, req) => {
+export const createSubject = async(req, res) => {
     try{
         const {subjectName, subjectCode, credit} = req.body;
 
         const existSubject = await subject.findOne({subjectCode})
 
         if(existSubject){
-            return res.status(404).json({
+            return res.status(409).json({
                 message: "Subject Already Exists"
             })
         }
 
-        return
-            res.status(200).json({
-                message: "User Created Successfully"
+        const subjectData = new subject({subjectName, subjectCode, credit})
+
+        const newSubject = await subjectData.save()
+
+        return res.status(200).json({
+                message: "User Created Successfully",
+                subject: newSubject
             })
     
     }catch(error){
@@ -31,7 +34,7 @@ export const getSubjects = async (req, res) => {
     try{
         const subjectData = await subject.find();
 
-        return res.ststus(200).json(subjectData)
+        return res.status(200).json(subjectData)
 
     
     }catch(error){
@@ -42,4 +45,82 @@ export const getSubjects = async (req, res) => {
     }
 }
 
-// export const getSubject =  async (req, res)
+export const getOneSubject =  async (req, res) => {
+    
+    try{
+        const {subjectCode} = req.params
+
+        const getSubject = await subject.findOne({subjectCode})
+
+        if(!getSubject){
+            return res.status(404).json({
+                message: "Subject Data Not Found"
+            })
+        }
+
+        return res.send(200).json(getSubject)
+    
+    }catch(error){
+        return res.status(500).json({
+            message: "Intrnal Server error",
+            error: error.message
+        })
+    }
+
+}
+
+export const updateSubject = async (req, res) => {
+    try{
+        const {subjectCode} = req.params
+
+        const updatedSubjects = await subject.updateOne(
+            {subjectCode},
+            req.body,
+            {new: true}
+        )
+
+        if(!updatedSubject){
+            return res.status(404).json({
+                message: "User not found"
+            })
+        }
+
+        return res.status(200).json({
+            message: "Subject Created Successfully",
+            updatedSubjects: updatedSubjects
+        })
+    
+    }catch(error){
+        return res.status(500).json({
+            message: "Internal Server Error",
+            error: error.message
+        })
+    }
+} 
+
+export const deleteSubject = async (req,res) => {
+    try{
+        const {subjectCode} = req.params
+
+        const deletedSubject = await subject.deleteOne(
+            {subjectCode}
+        )
+
+        if(!deleteSubject){
+            return res.status(404).json({
+                message: "User Not Found"
+            })
+        }
+        
+        return res.status(200).json({
+            message: "Data deleted Successfully"
+        })
+    
+    }catch(error){
+        return res.status(500).json({
+            message: "Internal Server Error",
+            error: error.message
+        })
+    }
+
+}
