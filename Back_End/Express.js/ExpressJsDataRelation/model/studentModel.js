@@ -9,7 +9,7 @@ const studentSchema = new mongoose.Schema(
         },
         email:{
             type: String,
-            required: [true, "StudentName is Required"],
+            required: [true, "StudentMail is Required"],
             unique: true,
             lowercase: true,
             trim: true
@@ -23,7 +23,8 @@ const studentSchema = new mongoose.Schema(
         },
         course:{
             type: String,
-            required: [true, "Student course is required"]
+            required: [true, "Student course is required"],
+            trim: true
         }
     },
     {
@@ -31,5 +32,5 @@ const studentSchema = new mongoose.Schema(
     }
 );
 
-const student = mongoose.model("student", studentSchema);
-export default student;
+const students = mongoose.model("students", studentSchema);
+export default students;

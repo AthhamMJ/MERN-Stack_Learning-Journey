@@ -1,23 +1,20 @@
 import mongoose from "mongoose";
-import { timeStamp } from "node:console";
 
 const examResultsShcema = new mongoose.Schema(
     {
-        student: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Student",
+        registrationNumber: {
+            type: String,
             required: true
         },
-        subject: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Subject",
-            required :true
+        subjectCode: {
+            type: String,
+            required: true
         },
         marks: {
             type: Number,
             required: true,
             min: 0,
-            max: 100 
+            max: 100
         },
         grade: {
             type: String,
@@ -29,10 +26,9 @@ const examResultsShcema = new mongoose.Schema(
         }
     },
     {
-        timestamps: true
+        timestamp: true
     }
 )
 
 const examResults = mongoose.model("ExamResults", examResultsShcema);
-
 export default examResults;

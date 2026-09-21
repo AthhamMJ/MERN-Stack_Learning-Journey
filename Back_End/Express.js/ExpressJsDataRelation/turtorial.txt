@@ -1,0 +1,20 @@
+watch the screen carefully
+watch the terminal
+it's success now
+im going to open the post man
+here you can see the get and post stuffs
+now the database connected so, im goingto fetch the data from the mongodb
+
+so i have to get the url (REST api for my application)
+
+now im going to the server.js , route.js
+now im opening the subjectRoute.js to get the url for getting the data
+
+
+now im going to get a speific data by subjectCode
+
+if i use the '/' and get method in postman i can get all the data (the getSubject) function will work
+
+just leave it, hope you understood the concept
+
+ok see you at another good time bye.

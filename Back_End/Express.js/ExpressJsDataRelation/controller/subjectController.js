@@ -17,13 +17,13 @@ export const createSubject = async(req, res) => {
         const newSubject = await subjectData.save()
 
         return res.status(200).json({
-                message: "User Created Successfully",
+                message: "Subject Created Successfully",
                 subject: newSubject
             })
     
     }catch(error){
         return res.status(500).json({
-            message: "Internal SErver Error",
+            message: "Internal Server Error",
             error: error.message
         })
     }
@@ -34,7 +34,7 @@ export const getSubjects = async (req, res) => {
     try{
         const subjectData = await subject.find();
 
-        return res.status(200).json(subjectData)
+        return res.status(200).json({SubjectData: subjectData})
 
     
     }catch(error){
@@ -73,7 +73,7 @@ export const updateSubject = async (req, res) => {
     try{
         const {subjectCode} = req.params
 
-        const updatedSubjects = await subject.updateOne(
+        const updatedSubject = await subject.updateOne(
             {subjectCode},
             req.body,
             {new: true}
@@ -87,7 +87,7 @@ export const updateSubject = async (req, res) => {
 
         return res.status(200).json({
             message: "Subject Created Successfully",
-            updatedSubjects: updatedSubjects
+            updatedSubject: updatedSubject
         })
     
     }catch(error){

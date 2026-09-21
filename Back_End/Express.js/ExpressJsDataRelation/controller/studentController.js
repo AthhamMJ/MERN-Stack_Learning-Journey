@@ -1,10 +1,11 @@
-import student from "../model/studentModel.js";
+import students from "../model/studentModel.js";
 
 export const createStudent = async (req, res) => {
+  console.log(req.body);
   try {
     const { name, email, registrationNumber, course } = req.body;
 
-    const existRegno = await student.findOne({ registrationNumber });
+    const existRegno = await students.findOne({ registrationNumber });
 
     if (existRegno) {
       return res.status(409).json({
@@ -12,7 +13,7 @@ export const createStudent = async (req, res) => {
       });
     }
 
-    const studentData = new student(req.body);
+    const studentData = new students(req.body);
 
     const newStudent = await studentData.save();
 
@@ -31,9 +32,12 @@ export const createStudent = async (req, res) => {
 
 export const getStudents = async (req, res) => {
   try {
-    const students = await student.find();
+    const studentData = await students.find();
 
-    return res.status(200).json(students);
+    return res.status(200).json({
+      message: "Here is the Student Data",
+      Student: studentData
+    });
   
   } catch (error) {
     return res.status(500).json({
@@ -47,20 +51,20 @@ export const getStudents = async (req, res) => {
 
 // get the data by id
 
-export const getstudent = async (req, res) => {
+export const getStudent = async (req, res) => {
   try {
     const {registrationNumber} = req.params
-    const getStudent = await student.findOne({
+    const gotStudent = await students.findOne({
       registrationNumber,
     });
 
-    if (!getStudent) {
+    if (!gotStudent) {
       return res.status(404).json({
         message: "Student not Found",
       });
     }
 
-    return res.status(200).json(getStudent);
+    return res.status(200).json(gotStudent);
   
   
   } catch (error) {
@@ -75,7 +79,7 @@ export const updateStudent = async (req, res) => {
   try {
     const {registrationNumber} = req.params
 
-    const updatedStudent = await student.findByIdAndUpdate(
+    const updatedStudent = await students.findOneAndUpdate(
       { registrationNumber },
       req.body,
       { new: true },
@@ -104,10 +108,10 @@ export const updateStudent = async (req, res) => {
 export const deleteStudent = async (req, res) => {
   try {
     const {registrationNumber} = req.params
-    const deletedStudent = await student.findByIdAndDelete({registrationNumber});
+    const deletedStudent = await students.findByIdAndDelete({registrationNumber});
 
     if (!deletedStudent) {
-      res.status(404).json({
+      return res.status(404).json({
         message: "Student not Found bro",
       });
     }

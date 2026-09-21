@@ -1,0 +1,48 @@
+form{
+    display: flex;
+    flex-direction: column;
+
+    width: 500px;
+    height: max-content;
+    justify-content: left;
+    margin: 10px;
+    border-radius: 28px;
+    border: 1px solid black;
+    padding: 10px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    border: 1px solid rgba(199, 191, 191, 0.25);
+    border-radius: 16px;
+    
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2),
+                inset 0 1px 1px 0 rgba(255, 255, 255, 0.3);
+}
+.submit, .clear{
+    width: 100px;
+    height: 30px;
+    background-color: rgba(60, 240, 60, 0.75);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    border: 1px solid rgba(199, 191, 191, 0.25);
+    border-radius: 16px;
+    
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2),
+                inset 0 1px 1px 0 rgba(255, 255, 255, 0.3);
+}
+.clear{
+    background-color: rgba(255, 0, 0, 0.75);
+}
+
+h1{
+    text-align: center;
+}
+.input{
+    border: 0.6px solid black;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+}

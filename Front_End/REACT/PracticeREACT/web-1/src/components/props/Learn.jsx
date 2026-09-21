@@ -1,10 +1,27 @@
 import { useState } from 'react';
 import lewis from '../../assets/lewis.png';
-import { FileX } from 'lucide-react';
 
-export default function Learn(props) {
-  const { students } = props;
-  const [count, setCount] = useState(0);
+export default function Learn({ students: initialStudents }) {
+
+  const [students, setStudents] = useState(initialStudents);
+
+  const increasePoints = (id) => {
+
+    setStudents(
+      students.map((student) => {
+
+        if (student.id === id) {
+          return {
+            ...student,
+            points: student.points + 1
+          };
+        }
+
+        return student;
+      })
+    );
+  };
+
   const [name, setName] = useState("Ferrari")
   const [color, setColor] = useState("yellow")
 
@@ -13,15 +30,15 @@ export default function Learn(props) {
       {students.map((student) => (
         <div key={student.name} style={style.box}>
           <div>
-            <img src={lewis} style={{ width: '200px', height: '200px', borderRadius: '28px'}}/>
+            <img src={lewis} style={{ width: '200px', height: '200px', borderRadius: '28px'}} alt='Driver/image'/>
           </div>
           <h1>Name: {student.name}</h1>
           <h2 style={style.name}>Age: {student.age}</h2>
-          <h2>Points: {count}</h2>
+          <h2>Points: {student.points}</h2>
           <h2>Team: {name}</h2>
           <button style={style.button} onClick={() => console.log(student.name)}>Name</button>
-          <button style={style.button} onClick={() => setCount(count+1)}>Points</button>
-          <button style={style.button} onClick={() => setCount(count-1)}>Points-Minus</button>
+          <button style={style.button} onClick={ () => increasePoints(student.id)}>Points-up</button>
+          <button style={style.button}>Points-Minus</button>
           <button style={style.button} onClick={() => setName("AMG")}>Change-Team</button>
           <button style={{backgroundColor:color}} onClick={() => setColor("red")}>Color</button>
         </div>

@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const subjectSchema = new mongoose.Schema(
     {
-        subjetName:{
+        subjectName:{
             type: String,
             required: [true, "SubjectName is Required"],
             trim: true
