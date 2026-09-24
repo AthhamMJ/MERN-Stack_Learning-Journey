@@ -1,0 +1,32 @@
+*{
+    margin: 10px;
+    font-family: sans-serif;
+    font-size: 20px;
+    background-color: rgb(7, 7, 7);
+    color: white;
+}
+button, .reset-btn{
+    width: fit-content;
+    height: 30px;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    outline: none;
+}
+input{
+    width: 300px;
+    height: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(244, 241, 241, 0.5);
+    outline: none;
+}
+
+form, div, .Provider{
+    width: auto;
+    height: auto;
+    border-radius: 28px;
+    border: 1px solid rgba(199, 191, 191, 0.25);
+    border-radius: 16px;
+    
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2),
+                inset 0 1px 1px 0 rgba(255, 255, 255, 0.3);
+}

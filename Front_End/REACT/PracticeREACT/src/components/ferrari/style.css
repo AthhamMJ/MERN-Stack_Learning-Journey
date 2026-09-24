@@ -1,0 +1,120 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background-color: white;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: white;
+    height: 70px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.979);
+}
+
+a{
+    padding: 0px 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.home-contend{
+    display: flex;
+}
+.leclerc{
+    background-image: url(../../assets/Chalex.jpeg);
+    height: 500px;
+    width: 500px;
+    background-size: cover;
+}
+.content{
+    flex: 1;
+    background-image: url(../../assets/ferrari.webp);
+    background-size: cover;
+}
+
+.redferrari{
+    font-family: poppins;
+    text-align: left;
+    font-size: 80px;
+    color: white;
+}
+
+p{
+    padding: 10px;
+    color: white;
+
+    font-size: 24px;
+}
+
+button{ 
+    margin: 100px;
+    width: 200px;
+    height: 40px;
+
+    border-radius: 28px;
+    font-size: 24px;
+    color: white;
+    
+    border: 1px solid rgb(255 255 255 / 80%);
+    background-color: rgb(255 255 255 / 60%);
+}
+
+.title{
+    color: red;
+    font-size: 36px;
+}
+
+.content2{
+    display: flex;
+    margin: 10px;
+    padding: 100px;
+
+    align-items: flex-start;
+    background: rgb(9, 9, 9); 
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    border: 1px solid rgba(199, 191, 191, 0.25);
+    border-radius: 16px;
+    
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2),
+                inset 0 1px 1px 0 rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+}
+
+.text-content1{
+    text-align: left;
+    color: white;
+    flex: 2;
+}
+.text-content2{
+    color: red;
+    flex: 3;
+}
+.para2{
+    color: red;
+    font-size: 20px;
+    line-height: 30px;
+}
+li{
+    color: white;
+    margin-top: 20px;
+    position: relative;
+    left:25px;
+    font-size: 20px;
+}
+.para1{
+    color: #ffffff;
+    font-size: 20px;
+}
+
+ul{
+    text-align: left;
+    position: relative;
+}

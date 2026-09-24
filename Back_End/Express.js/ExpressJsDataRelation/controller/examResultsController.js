@@ -56,3 +56,28 @@ export const getExamDetails = async(req, res) => {
         })
     }
 }
+
+export const updateExam = async(req, res) => {
+    try{
+        const{registrationNumber} = req.params
+        const{subjectCode} = req.params
+
+
+        const newExam = await examResults.findOneAndUpdate(
+            {registrationNumber},
+            {subjectCode},
+            req.body,
+            { new: true }
+        )
+
+        return res.status(200).json({
+            message: "Student Created Successfully"
+        })
+
+    }catch(error){
+        return res.staus(500).json({
+            message: "Internal Server Error",
+            error: error.message
+        })
+    }
+}
