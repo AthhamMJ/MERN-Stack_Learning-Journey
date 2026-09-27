@@ -1,6 +1,5 @@
-// import { useState } from "react"
+import { useCallback, useState } from "react"
 
-import { useCallback } from "react"
 
 export default function Task7(){
     const student = [
@@ -15,7 +14,9 @@ export default function Task7(){
 
     const[name, setName] = useState("")
 
-    const handleClick = useCallback()
+    const handleClick = useCallback((selectedName) =>{
+        setName(selectedName)
+    })
 
 
 
@@ -23,12 +24,12 @@ export default function Task7(){
         <div>
             <ul>
                 {student.map((student) => 
-                    <li>{student.name}</li>
+                    <li>{student.name}<button onClick={()=>{handleClick(student.name)}}>Select</button></li>
                 )}
             </ul>
 
             <div>
-                <p><strong>Selected Student: </strong></p>
+                <p><strong>Selected Student: {name}</strong></p>
             </div>
         </div>
     )
