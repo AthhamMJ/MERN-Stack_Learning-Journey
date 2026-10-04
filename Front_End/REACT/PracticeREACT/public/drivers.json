@@ -1,0 +1,144 @@
+{
+  "drivers": [
+    {
+      "name": "Max Verstappen",
+      "number": 3,
+      "nationality": "Dutch",
+      "age": 29,
+      "careerWins": 71
+    },
+    {
+      "name": "Lewis Hamilton",
+      "number": 44,
+      "nationality": "British",
+      "age": 41,
+      "careerWins": 105
+    },
+    {
+      "name": "Charles Leclerc",
+      "number": 16,
+      "nationality": "Monegasque",
+      "age": 28,
+      "careerWins": 8
+    },
+    {
+      "name": "Lando Norris",
+      "number": 1,
+      "nationality": "British",
+      "age": 26,
+      "careerWins": 11
+    },
+    {
+      "name": "Oscar Piastri",
+      "number": 81,
+      "nationality": "Australian",
+      "age": 25,
+      "careerWins": 13
+    },
+    {
+      "name": "George Russell",
+      "number": 63,
+      "nationality": "British",
+      "age": 28,
+      "careerWins": 7
+    },
+    {
+      "name": "Fernando Alonso",
+      "number": 14,
+      "nationality": "Spanish",
+      "age": 45,
+      "careerWins": 32
+    },
+    {
+      "name": "Carlos Sainz",
+      "number": 55,
+      "nationality": "Spanish",
+      "age": 32,
+      "careerWins": 4
+    },
+    {
+      "name": "Sergio Perez",
+      "number": 11,
+      "nationality": "Mexican",
+      "age": 36,
+      "careerWins": 6
+    },
+    {
+      "name": "Lance Stroll",
+      "number": 18,
+      "nationality": "Canadian",
+      "age": 27,
+      "careerWins": 0
+    },
+    {
+      "name": "Pierre Gasly",
+      "number": 10,
+      "nationality": "French",
+      "age": 30,
+      "careerWins": 1
+    },
+    {
+      "name": "Esteban Ocon",
+      "number": 31,
+      "nationality": "French",
+      "age": 30,
+      "careerWins": 1
+    },
+    {
+      "name": "Alex Albon",
+      "number": 23,
+      "nationality": "Thai",
+      "age": 30,
+      "careerWins": 0
+    },
+    {
+      "name": "Yuki Tsunoda",
+      "number": 22,
+      "nationality": "Japanese",
+      "age": 26,
+      "careerWins": 0
+    },
+    {
+      "name": "Nico Hulkenberg",
+      "number": 27,
+      "nationality": "German",
+      "age": 39,
+      "careerWins": 0
+    },
+    {
+      "name": "Valtteri Bottas",
+      "number": 77,
+      "nationality": "Finnish",
+      "age": 37,
+      "careerWins": 10
+    },
+    {
+      "name": "Liam Lawson",
+      "number": 30,
+      "nationality": "New Zealander",
+      "age": 24,
+      "careerWins": 0
+    },
+    {
+      "name": "Oliver Bearman",
+      "number": 87,
+      "nationality": "British",
+      "age": 21,
+      "careerWins": 0
+    },
+    {
+      "name": "Franco Colapinto",
+      "number": 43,
+      "nationality": "Argentine",
+      "age": 23,
+      "careerWins": 0
+    },
+    {
+      "name": "Gabriel Bortoleto",
+      "number": 5,
+      "nationality": "Brazilian",
+      "age": 21,
+      "careerWins": 0
+    }
+  ]
+}

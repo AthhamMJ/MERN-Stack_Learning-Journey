@@ -1,6 +1,7 @@
 import express from 'express'
 import dotEnv from 'dotenv'
 import mongoose from 'mongoose'
+import routeTrainee from './routes/traineeRoute.js'
 
 dotEnv.config()
 
@@ -19,6 +20,8 @@ const MONGOURL = process.env.MONGOURL
 // app.listen(PORT, ()=> {
 //     console.log(`Server is running in http://localhost:${PORT}`)
 // })
+
+app.use('/api/trainee', routeTrainee)
 
 mongoose.connect(MONGOURL).then(() =>{
     console.log("Database Connected Successfully")
